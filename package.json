@@ -1,0 +1,21 @@
+{
+	"devDependencies": {
+		"pkg": "^5.8.0"
+	},
+	"scripts": {
+		"pkg-npm": "rm -rf ./node_modules && npm install && pkg package.json -targets=node16-linux-x64 -o pkg_npm && ./pkg_npm",
+		"pkg-pnpm": "rm -rf ./node_modules && pnpm install && pkg package.json -targets=node16-linux-x64 -o pkg_pnpm && ./pkg_pnpm"
+	},
+	"bin": {
+		"pkg": "./src.js"
+	},
+	"dependencies": {
+		"aws-sdk": "^2.1238.0",
+		"ssh2": "^1.11.0"
+	},
+	"pkg": {
+		"assets": [
+			"node_modules/vm2/**/*"
+		]
+	}
+}
